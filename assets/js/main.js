@@ -1,26 +1,5 @@
-/**
-* Template Name: PhotoFolio - v1.2.0
-* Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
-
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        preloader.classList.add('loaded');
-      }, 10);
-      setTimeout(() => {
-        preloader.remove();
-      }, 1000);
-    });
-  }
 
   /**
    * Mobile nav toggle
@@ -171,5 +150,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+/** 
+ * Scroll BG
+ */
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() >= 50) {
+    $('.header').css('background', 'red');
+  } else {
+    $('.header').css('background', 'transparent');
+  }
+});
+
+
+
 
 
