@@ -1037,7 +1037,7 @@ div.info{
     justify-content: center;
     flex-wrap: wrap;
 }
-span{
+.card-wrapper{
     display: flex;
     align-items: center;
     justify-content: center;
