@@ -22,8 +22,8 @@ h1 span{font-family: 'Libre Baskerville', serif; display:block; font-size:45px; 
 h1 a{color:#131313; font-weight:bold;}
 
 :root {
-  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-primary: "Inter", sans-serif;
+  --font-default: caviar;
+  --font-primary: adam;
   --font-secondary: "Cardo", sans-serif;
 }
 
@@ -51,7 +51,7 @@ a {
 }
 
 a:hover {
-  color: #fff;
+  color: var(--color-default);
   text-decoration: none;
   transition: 1.5s;
 }
@@ -110,7 +110,7 @@ h3 .section-sub-title{
 }
 
 .page-header .cta-btn:hover {
-  background: #2cbc85;
+  background: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
@@ -132,7 +132,7 @@ h3 .section-sub-title{
 
 .scroll-top i {
   font-size: 24px;
-  color: #fff;
+  color: var(--color-default);
   line-height: 0;
 }
 
@@ -149,7 +149,8 @@ h3 .section-sub-title{
   transition: all 0.5s;
   z-index: 997;
   padding: 30px 0;
-  /* background: linear-gradient(to top, rgba(8, 8, 8, 0.5), rgba(10, 10, 10, 0.6)),  url(../bg.jpg); */
+  position: fixed;
+  background: linear-gradient(to top, rgba(8, 8, 8, 0.5), rgba(10, 10, 10, 0.6)),  url(../bg.jpg);
 }
 
 .header .logo {
@@ -169,12 +170,12 @@ h3 .section-sub-title{
   font-size: 32px;
   margin: 0;
   font-weight: 400;
-  color: #fff;
+  color: var(--color-default);
   font-family: adam;
 }
 
 .header .logo h1:hover{
-  color: #412a7a;
+  color: var(--color-primary);
   font-size: 2em;
 }
 
@@ -208,7 +209,7 @@ h3 .section-sub-title{
 }
 
 .header .header-social-links a:hover {
-  color: #fff;
+  color: var(--color-default);
 }
 
 @media (max-width: 575px) {
@@ -261,7 +262,7 @@ h3 .section-sub-title{
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #fff;
+    color: var(--color-default);
   }
 
   .navbar .dropdown ul {
@@ -297,7 +298,7 @@ h3 .section-sub-title{
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
   .navbar .dropdown ul li:hover>a {
-    color: #fff;
+    color: var(--color-default);
   }
 
   .navbar .dropdown:hover>ul {
@@ -388,7 +389,7 @@ h3 .section-sub-title{
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #fff;
+    color: var(--color-default);
   }
 
   .navbar .dropdown ul,
@@ -407,7 +408,7 @@ h3 .section-sub-title{
   }
 
   .mobile-nav-show {
-    color: #fff;
+    color: var(--color-default);
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -417,7 +418,7 @@ h3 .section-sub-title{
   }
 
   .mobile-nav-hide {
-    color: #fff;
+    color: var(--color-default);
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
@@ -445,37 +446,33 @@ h3 .section-sub-title{
   }
 }
 
-.about .content h2 {
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--color-primary);
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.about .content ul strong {
-  margin-right: 10px;
-}
-
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: var(--color-primary);
-  line-height: 0;
-}
-
 .programmer {
   margin-top: 80px;
 }
+
+.section-header h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.section-header h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--color-primary);
+  margin: 4px 10px;
+}
+
+/*--------------------------------------------------------------
+# Programmer Section
+--------------------------------------------------------------*/
 
 .programmer .programmer-item {
   box-sizing: content-box;
@@ -488,15 +485,6 @@ h3 .section-sub-title{
   transition: 0.3s;
 }
 
-.programmer .programmer-item .stars {
-  margin-bottom: 15px;
-}
-
-.programmer .programmer-item .stars i {
-  color: #ffc107;
-  margin: 0 1px;
-}
-
 .programmer .programmer-item .programmer-img {
   width: 90px;
   border-radius: 50%;
@@ -505,10 +493,12 @@ h3 .section-sub-title{
 }
 
 .programmer .programmer-item h3 {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   margin: 10px 0 5px 0;
-  color: #fff;
+  color: var(--color-default);
+  font-family: var(--font-default);
+  letter-spacing: 2px;
 }
 
 .programmer .programmer-item h4 {
@@ -571,7 +561,7 @@ h3 .section-sub-title{
   padding: 5px 20px;
   transform: translate(0%, -100%);
   width: 100%;
-  color: white;
+  color: var(--color-default);
 }
 
 .gallery .gallery-item,
@@ -581,10 +571,143 @@ h3 .section-sub-title{
   border-radius: 10px;
 }
 
-div.info{
-  border: 1px solid white;
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.search-wrapper{
+  display: flex;
   width: 100%;
-  padding: 100%;
+  justify-content: center;
+  padding: 30px;
+}
+
+.search-wrapper .search-card{
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--color-default);
+}
+
+.search-card input{
+  width: 400px;
+  padding: 10px 20px;
+  outline: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-default);
+  margin-right: 10px;
+  text-align: start;
+}
+
+.search-card i{
+  font-size: 25px;
+}
+
+::placeholder{
+  letter-spacing: 2px;
+}
+
+.info-contain{
+  flex-direction: column;
+  justify-content: center;
+  display: flex;  
+  position: relative;
+  padding-top: 30px;
+}
+
+@media screen and(max-width: 575px) {
+  .info-contain{
+    display: block;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.info-contain .link-info{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.info-contain .link-info a{
+  padding: 5px;
+  font-weight: 800;
+  font-family: var(--font-primary);
+}
+
+.info-contain .link-info p{
+  font-size: 18px;
+  color: var(--color-default);
+}
+
+.info-contain .link-info img{
+  width: 70px;
+  position: relative;
+}
+
+.info{
+  width: 100%;
+}
+
+.info details{
+  display: flex;
+  width: 100%;
+}
+
+details > summary {
+  list-style: none;
+}
+
+.info summary{
+  outline: 0;
+  font-size: 18px;
+  color: var(--color-default);
+  border-bottom: 1px solid var(--color-default);
+  padding: 5px;
+}
+
+.info .question{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.question .button-down{
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.question img{
+  width: 200px;
+  padding: 10px;
+}
+
+.question .image-question{
+  text-align: center;
+}
+
+.info-text{
+  color: var(--color-default);
+  border-left: 3px solid var(--color-default);
+  font-size: 16px;
+  margin-left: 30px;
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+.ig-link{
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-default);
+  margin: 0;
+}
+
+.ig-link i{
+  font-size: 14px;
 }
 
 .gallery .gallery-item img {
@@ -594,6 +717,7 @@ div.info{
 
 .gallery .gallery-items img{
   transition: 0.3s;
+  opacity: 0.5;
 }
 
 .gallery .gallery-links {
@@ -616,7 +740,7 @@ div.info{
 
 .gallery .gallery-links .preview-link:hover,
 .gallery .gallery-links .details-link:hover {
-  color: #fff;
+  color: var(--color-default);
 }
 
 .gallery .gallery-links .details-link {
@@ -655,7 +779,7 @@ div.info{
 /*--------------------------------------------------------------
 # Gallery Single Section
 --------------------------------------------------------------*/
-.gallery-single .portfolio-details-slider img {
+/* .gallery-single .portfolio-details-slider img {
   width: 100%;
 }
 
@@ -751,14 +875,14 @@ div.info{
 }
 
 .gallery-single .portfolio-info .btn-visit:hover {
-  background: #2cbc85;
+  background: var(--color-primary);
 }
 
 .gallery-single .portfolio-description h2 {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--color-default);
   font-family: var(--font-secondary);
 }
 
@@ -797,7 +921,7 @@ div.info{
 
 .gallery-single .portfolio-description .programmer-item .quote-icon-left,
 .gallery-single .portfolio-description .programmer-item .quote-icon-right {
-  color: #5bd9a9;
+  color: var(--color-primary);
   font-size: 26px;
   line-height: 0;
 }
@@ -820,7 +944,7 @@ div.info{
   font-style: italic;
   margin: 0 0 15px 0 0 0;
   padding: 0;
-}
+} */
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -855,7 +979,7 @@ div.info{
   top: 0;
   width: 130%;
   height: 96%;
-  background: black;
+  background: var(--color-secondary);
   opacity: 0.3;
   z-index: 0;
   border-radius: 0 0 50% 50%;
@@ -875,7 +999,7 @@ div.info{
 }
 
 #hero h2 {
-  color: #fff;
+  color: var(--color-default);
   margin-bottom: 30px;
   font-size: 48px;
   font-weight: 700;
@@ -885,7 +1009,8 @@ div.info{
 #hero p {
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
-  color: #fff;
+  color: var(--color-default);
+  font-family: var(--font-default);
   font-weight: 500;
   margin-bottom: 40px;
   font-style: italic;
@@ -907,7 +1032,7 @@ div.info{
 
 #hero .btn-get-started {
   font-weight: bold;
-  font-family: adam;
+  font-family: var(--font-primary);
   font-size: 14px;
   letter-spacing: 1px;
   display: inline-block;
@@ -916,17 +1041,17 @@ div.info{
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color: #fff;
+  color: var(--color-default);
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid ghostwhite;
+  border: 2px solid var(--color-default);
   background: url(../bg.jpg);
 }
 
 #hero .btn-get-started:hover {
   background: url(../bg.jpg);
   background-size: cover;
-  border: 1px solid ghostwhite;
+  border: 1px solid var(--color-default);
   color: white;
   text-decoration: none;
   font-weight: bolder;
@@ -1012,7 +1137,7 @@ div.info{
 
 
 .btn-shine{
-  background: linear-gradient(to right, #412a7a 0, white 10%, #412a7a 40%);
+  background: linear-gradient(to right, #412a7a 0, #fff 10%, #412a7a 40%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 6s infinite linear;
@@ -1028,9 +1153,13 @@ div.info{
   100%{background-position: 0;}
   }
 
-  .card{
+/*--------------------------------------------------------------
+# Card
+--------------------------------------------------------------*/
+
+.card{
     background: none;
-    font-family: caviar;
+    font-family: var(--font-default);
 }
 .container-card{
     display: flex;
@@ -1045,17 +1174,17 @@ div.info{
 }
 .card-bg{
     position: absolute;
-    width: 300px;
-    height: 250px;
+    width: 350px;
+    height: 280px;
     border-radius: 5px;
     transition: 0.5s;
-    box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px var(--color-default);
 }
 .card-item{
     margin: 20px;        
     border-radius: 5px;     
-    width: 300px;
-    height: 250px;
+    width: 350px;
+    height: 280px;
     position: relative;
     transition: 0.5s;
 }
@@ -1080,6 +1209,7 @@ span:hover .card-bg{
     z-index: 10;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     transition: 0.5s;
 }
@@ -1088,13 +1218,13 @@ span:hover .card-bg{
     letter-spacing: 2px;
     font-weight: lighter;
     margin-top: 30px;
-    font-family: caviar;
+    font-family: var(--font-default);
 }
 .card-item .posisi{
     font-size: 12px;
 }
 .card-item .birth{
-    margin-top: 100px;
+    margin-top: 140px;
     padding: 0;
 }
 .card-item .birth p{
@@ -1105,30 +1235,36 @@ span:hover .card-bg{
     padding: 5px;
 }
 .card .hover{
-    overflow: hidden;
-    opacity: 0;
     display: flex;
+    opacity: 0;
+    transform: translate(0%, -170%);
+    height: 10vh;
     justify-content: center;
+    align-items: center;
 }
 .card .hover .quotes{
-    display: flex;     
-    padding: 20px;
-    z-index: 999;
-    filter: none;
-    position: absolute;
-    transform: translate(0%, -150%);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    filter: none;    
 }
 .hover .quotes i{
     font-size: 1.3em;
-    color: #fff;
+    color: var(--color-default);
 }
 .hover .quotes h3{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--font-default);
     padding: 5px;
     font-style: italic;
     font-size: small;
     text-align: center;
     font-weight: 300;
     letter-spacing: 2px;
-    color: #fff;
+    color: var(--color-default);
+    font: 0.8em;
 }  
+
+#content-link{
+  padding: 60px;
+}

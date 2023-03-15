@@ -155,13 +155,45 @@ document.addEventListener('DOMContentLoaded', () => {
  * Scroll BG
  */
 
-$(window).scroll(function() {
-  if ($(window).scrollTop() >= 50) {
-    $('.header').css('background', 'red');
+window.onscroll = function() {scrollFunction()};
+ 
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    
+    document.getElementById("header").style.background = "";
   } else {
-    $('.header').css('background', 'transparent');
+   
+    document.getElementById("header").style.background = "none";
   }
-});
+}
+
+/**
+ * Search Name
+ */
+
+                    
+function search() {
+  let filter = document.getElementById('search').value.toUpperCase();
+
+  let item = document.querySelectorAll('span.card-wrapper');
+
+  let l = document.getElementsByClassName('nama');
+  
+  for (let i = 0; i <= l.length; i++) {
+      let a = item[i].getElementsByClassName('nama')[0];
+
+      let value = a.innerHTML || a.innerText || a.textContent;
+      
+      if (value.toUpperCase().indexOf(filter) > -1) {
+          item[i].style.display="";
+      }else{
+          item[i].style.display="none";
+      }
+  }
+}
+
+
+
 
 
 
